@@ -1,0 +1,32 @@
+A ESSÊNCIA DA CORAGEM — SITE ESTÁTICO
+
+ESTRUTURA
+
+assets/
+  Contém todas as imagens utilizadas no site.
+
+index.html
+  Arquivo principal do site.
+
+styles.css
+  Estilos, cores e responsividade para computador e celular.
+
+COMO ABRIR
+
+1. Extraia o arquivo ZIP.
+2. Mantenha a pasta assets junto do index.html e do styles.css.
+3. Clique duas vezes no arquivo index.html para abrir o site no navegador.
+
+COMO PUBLICAR
+
+Envie a pasta completa para a hospedagem, sem alterar a estrutura dos arquivos.
+O index.html deve permanecer na raiz.
+
+ATENÇÃO
+
+O WhatsApp utilizado nos botões ainda é o número provisório 5587999999999.
+Antes de publicar, substitua esse número pelo WhatsApp definitivo da cliente em
+todos os links wa.me presentes no index.html.
+
+A imagem foto-flores enviada originalmente estava incompleta. Para impedir uma
+imagem quebrada, a versão atual usa a composição floral da capa como alternativa.
