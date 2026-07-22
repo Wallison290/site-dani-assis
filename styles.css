@@ -365,14 +365,6 @@ a:hover .arrow {
   fill: var(--color-surface);
 }
 
-.section-divider__shape--primary {
-  fill: var(--color-primary);
-}
-
-.section-divider__shape--text {
-  fill: var(--color-text);
-}
-
 /* Livro */
 .book-section {
   background: var(--color-bg-alt);
@@ -395,9 +387,10 @@ a:hover .arrow {
 
 .book-stage__word {
   position: absolute;
+  z-index: 2;
   right: -1rem;
   bottom: 1rem;
-  color: rgba(107, 62, 64, 0.1);
+  color: rgba(255, 250, 244, 0.35);
   font-family: var(--font-display);
   font-size: clamp(5rem, 16vw, 10rem);
   line-height: 0.8;
@@ -405,10 +398,12 @@ a:hover .arrow {
 
 .book-stage__caption {
   position: absolute;
+  z-index: 2;
   bottom: 1.25rem;
   left: 1.25rem;
   max-width: 11rem;
   margin: 0;
+  color: #fffaf4;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -416,13 +411,13 @@ a:hover .arrow {
   text-transform: uppercase;
 }
 
-.book-cover-image {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: min(78%, 22rem);
-  height: auto;
-  filter: drop-shadow(1.85rem 2.2rem 0 rgba(74, 46, 48, 0.18));
+.book-stage__photo {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .book-cover {
