@@ -281,15 +281,6 @@ h3 {
   color: #fffaf4;
 }
 
-.arrow {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-a:hover .arrow {
-  transform: translate(2px, -2px);
-}
-
 /* Hero */
 .photo-section {
   isolation: isolate;
@@ -516,6 +507,8 @@ a:hover .arrow {
   border-radius: 0.35rem;
   background: var(--color-bg);
   box-shadow: 0 0 0 rgba(74, 46, 48, 0);
+  /* Serve de referência para dimensionar a palavra grande abaixo */
+  container-type: inline-size;
   transition: box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -546,12 +539,17 @@ a:hover .arrow {
 .book-stage__word {
   position: absolute;
   z-index: 2;
-  right: -1rem;
-  bottom: 1rem;
+  right: 1.5rem;
+  bottom: 5.5rem;
+  left: 1.5rem;
   color: rgba(255, 250, 244, 0.35);
   font-family: var(--font-display);
-  font-size: clamp(5rem, 16vw, 10rem);
+  /* Reserva para navegadores sem container queries */
+  font-size: clamp(2.5rem, 10vw, 6.5rem);
+  /* Acompanha a largura da própria foto, então a palavra nunca corta */
+  font-size: min(26cqw, 9rem);
   line-height: 0.8;
+  text-align: right;
   transition: color 0.6s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
