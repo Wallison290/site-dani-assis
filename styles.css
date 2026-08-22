@@ -409,10 +409,10 @@ h3 {
 }
 
 .book-flip--final {
-  width: min(96%, 30rem);
+  width: min(100%, 42rem);
   /* Compensa a margem transparente do PNG, aproximando a legenda */
-  margin-bottom: -3rem;
-  filter: drop-shadow(0 1.8rem 2.8rem rgba(41, 17, 19, 0.45));
+  margin-bottom: -7%;
+  filter: drop-shadow(0 2.2rem 3.2rem rgba(41, 17, 19, 0.5));
 }
 
 .book-flip__hint {
@@ -1106,12 +1106,9 @@ h3 {
 
 .final-book {
   display: grid;
-  min-height: 28rem;
   align-content: center;
   justify-items: center;
-  gap: 1.5rem;
-  padding: 2.25rem 1rem;
-  background: rgba(74, 46, 48, 0.3);
+  gap: 1.25rem;
 }
 
 /* Preço */
@@ -1407,6 +1404,12 @@ h3 {
     gap: clamp(4rem, 8vw, 7rem);
   }
 
+  /* Mockup final maior: a coluna da imagem ocupa mais espaço que a do texto */
+  .final-cta-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2.5rem, 4vw, 4rem);
+  }
+
   .book-grid .section-copy {
     order: -1;
   }
@@ -1484,10 +1487,6 @@ h3 {
 
   .journey-grid {
     gap: 8rem;
-  }
-
-  .final-book {
-    min-height: 41rem;
   }
 }
 
