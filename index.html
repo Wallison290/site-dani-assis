@@ -80,16 +80,6 @@
               >
                 Quero receber meu exemplar
               </a>
-              <a
-                class="text-link text-link--light"
-                href="https://wa.me/5511973615080?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
-                target="_blank"
-                rel="noopener"
-                data-event="click_whatsapp_hero"
-              >
-                Falar no WhatsApp
-                <span class="arrow" aria-hidden="true">↗</span>
-              </a>
             </div>
           </div>
 
@@ -139,7 +129,7 @@
       <!-- Apresentação do livro -->
       <section id="livro" class="section book-section">
         <div class="container book-grid">
-          <div class="book-stage reveal">
+          <div class="book-stage reveal" data-parallax>
             <img
               class="book-stage__photo"
               src="assets/foto-segunda-pagina.png"
@@ -195,13 +185,22 @@
       <section id="autora" class="section author-section">
         <div class="container author-grid">
           <div class="author-image-wrap reveal">
-            <img
-              src="assets/foto-dani-assis.jpeg"
-              alt="Dani Assis sentada em um sofá, sorrindo"
-              width="1200"
-              height="1600"
-              loading="lazy"
-            />
+            <div
+              class="author-collage"
+              data-author-collage
+              role="img"
+              aria-label="Dani Assis com o livro A Essência da Coragem"
+            >
+              <figure class="author-photo author-photo--main">
+                <img src="assets/foto-dani-assis.jpeg" alt="" loading="lazy" />
+              </figure>
+              <figure class="author-photo author-photo--top">
+                <img src="assets/foto-dani-sofa.jpeg" alt="" loading="lazy" />
+              </figure>
+              <figure class="author-photo author-photo--bottom">
+                <img src="assets/foto-dani-leitura.jpeg" alt="" loading="lazy" />
+              </figure>
+            </div>
             <div class="author-image-caption">
               <span>Dani Assis</span>
               <small>Autora • Palestrante • Apresentadora</small>
@@ -251,20 +250,20 @@
             </p>
           </div>
 
-          <ol class="audience-list reveal">
-            <li>
+          <ol class="audience-list">
+            <li class="reveal" style="--i: 0">
               <span>01</span>
               <p>Sente que nasceu para viver algo maior</p>
             </li>
-            <li>
+            <li class="reveal" style="--i: 1">
               <span>02</span>
               <p>Deseja empreender com propósito</p>
             </li>
-            <li>
+            <li class="reveal" style="--i: 2">
               <span>03</span>
               <p>Busca alinhar carreira, fé e realização</p>
             </li>
-            <li>
+            <li class="reveal" style="--i: 3">
               <span>04</span>
               <p>Tem medo, mas sabe que precisa dar o próximo passo</p>
             </li>
@@ -293,7 +292,7 @@
           </div>
 
           <div class="benefit-grid">
-            <article class="benefit-card reveal">
+            <article class="benefit-card reveal" style="--i: 0">
               <span>01</span>
               <h3>Fé que conduz</h3>
               <p>
@@ -301,7 +300,7 @@
                 está completamente visível.
               </p>
             </article>
-            <article class="benefit-card reveal">
+            <article class="benefit-card reveal" style="--i: 1">
               <span>02</span>
               <h3>Coragem em movimento</h3>
               <p>
@@ -309,7 +308,7 @@
                 colocar a vida em movimento.
               </p>
             </article>
-            <article class="benefit-card reveal">
+            <article class="benefit-card reveal" style="--i: 2">
               <span>03</span>
               <h3>Propósito com clareza</h3>
               <p>
@@ -408,15 +407,6 @@
                 data-event="click_compra_final"
               >
                 Quero receber meu exemplar
-              </a>
-              <a
-                class="text-link text-link--light"
-                href="https://wa.me/5511973615080?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
-                target="_blank"
-                rel="noopener"
-                data-event="click_whatsapp_duvida"
-              >
-                Tirar uma dúvida
               </a>
             </div>
           </div>

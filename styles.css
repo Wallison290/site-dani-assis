@@ -192,12 +192,15 @@ h3 {
 }
 
 .button {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 3.5rem;
   margin-top: 1.1rem;
   padding: 0.9rem 2rem;
+  overflow: hidden;
   border: 1px solid var(--color-primary);
   border-radius: 9999px;
   background: var(--color-primary);
@@ -207,14 +210,32 @@ h3 {
   letter-spacing: 0.04em;
   line-height: 1.25;
   text-align: center;
-  transition: background 0.2s ease, border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.button:hover {
-  border-color: var(--color-primary-hover);
-  background: var(--color-primary-hover);
-  transform: translateY(-2px) scale(1.01);
+/* Preenchimento que sobe de baixo no hover */
+.button::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--color-bg);
+  content: "";
+  transform: translateY(101%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.button:hover,
+.button:focus-visible {
+  border-color: var(--color-bg);
+  color: var(--color-text);
+  transform: translateY(-3px);
+  box-shadow: 0 0.9rem 1.6rem rgba(41, 17, 19, 0.18);
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+  transform: translateY(0);
 }
 
 .button--light {
@@ -223,9 +244,14 @@ h3 {
   color: var(--color-text);
 }
 
-.button--light:hover {
-  border-color: #fffaf4;
-  background: #fffaf4;
+.button--light::after {
+  background: var(--color-primary);
+}
+
+.button--light:hover,
+.button--light:focus-visible {
+  border-color: var(--color-primary);
+  color: #fffaf4;
 }
 
 .text-link {
@@ -382,14 +408,16 @@ a:hover .arrow {
 }
 
 .book-flip--hero {
-  max-width: 380px;
+  width: min(100%, 32rem);
   margin-inline: auto;
-  filter: drop-shadow(0 2rem 3rem rgba(22, 8, 9, 0.45));
+  filter: drop-shadow(0 2.4rem 3.4rem rgba(22, 8, 9, 0.48));
 }
 
 .book-flip--final {
-  width: min(88%, 23rem);
-  filter: drop-shadow(0 1.6rem 2.6rem rgba(41, 17, 19, 0.42));
+  width: min(96%, 30rem);
+  /* Compensa a margem transparente do PNG, aproximando a legenda */
+  margin-bottom: -3rem;
+  filter: drop-shadow(0 1.8rem 2.8rem rgba(41, 17, 19, 0.45));
 }
 
 .book-flip__hint {
@@ -481,7 +509,34 @@ a:hover .arrow {
   place-items: center;
   padding: 2rem;
   overflow: hidden;
+  border-radius: 0.35rem;
   background: var(--color-bg);
+  box-shadow: 0 0 0 rgba(74, 46, 48, 0);
+  transition: box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.book-stage:hover {
+  box-shadow: 0 1.5rem 3rem rgba(74, 46, 48, 0.22);
+}
+
+/* Véu que escurece de leve a foto no hover, dando destaque ao texto */
+.book-stage::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    200deg,
+    rgba(74, 46, 48, 0) 35%,
+    rgba(74, 46, 48, 0.28) 100%
+  );
+  content: "";
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.book-stage:hover::after {
+  opacity: 1;
 }
 
 .book-stage__word {
@@ -493,6 +548,12 @@ a:hover .arrow {
   font-family: var(--font-display);
   font-size: clamp(5rem, 16vw, 10rem);
   line-height: 0.8;
+  transition: color 0.6s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.book-stage:hover .book-stage__word {
+  color: rgba(255, 250, 244, 0.58);
+  transform: translate(-0.75rem, -0.35rem);
 }
 
 .book-stage__caption {
@@ -508,6 +569,11 @@ a:hover .arrow {
   letter-spacing: 0.08em;
   line-height: 1.5;
   text-transform: uppercase;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.book-stage:hover .book-stage__caption {
+  transform: translateY(-0.4rem);
 }
 
 .book-stage__photo {
@@ -517,6 +583,13 @@ a:hover .arrow {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.book-stage:hover .book-stage__photo {
+  transform: scale(1.07);
 }
 
 .book-cover {
@@ -610,18 +683,85 @@ a:hover .arrow {
   position: relative;
 }
 
-.author-image-wrap img {
+/* Galeria animada da autora */
+.author-collage {
+  position: relative;
+  height: clamp(24rem, 62vw, 34rem);
+  isolation: isolate;
+}
+
+.author-collage figure {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.author-collage img {
   width: 100%;
-  max-height: 42rem;
-  border-radius: 0.5rem;
+  height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  animation: author-reveal 0.72s cubic-bezier(0.2, 0.72, 0.25, 1) both;
+}
+
+.author-photo--main {
+  top: 1.1rem;
+  bottom: 1.1rem;
+  left: 0;
+  width: 61%;
+  border-radius: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.author-photo--main img {
+  object-position: center 26%;
+}
+
+.author-photo--top {
+  top: 1.1rem;
+  right: 0;
+  width: 37%;
+  height: 61%;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.author-photo--top img {
+  object-position: center 32%;
+}
+
+.author-photo--bottom {
+  top: calc(1.1rem + 61% + 0.75rem);
+  right: 0;
+  bottom: 1.1rem;
+  width: 37%;
+  border-radius: 1.25rem;
+}
+
+.author-photo--bottom img {
+  object-position: center 30%;
+}
+
+@keyframes author-reveal {
+  from {
+    opacity: 0.18;
+    transform: scale(1.045);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .author-collage img {
+    animation: none;
+  }
 }
 
 .author-image-caption {
   position: relative;
   width: calc(100% - 2rem);
-  margin: -2.5rem auto 0;
+  margin: 1.25rem auto 0;
   padding: 1.25rem;
   border-radius: 0.35rem;
   background: var(--color-bg-alt);
@@ -684,21 +824,53 @@ a:hover .arrow {
 }
 
 .audience-list li {
+  position: relative;
   display: grid;
   grid-template-columns: 2rem 1fr;
   gap: 1rem;
   padding-block: 1.25rem;
+  padding-inline: 0.25rem;
   border-top: 1px solid var(--color-light-line);
+  transition: background 0.5s ease, padding-inline 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .audience-list li:last-child {
   border-bottom: 1px solid var(--color-light-line);
 }
 
+/* Traço que corre sob o item ao passar o mouse */
+.audience-list li::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--color-accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.audience-list li:hover {
+  background: rgba(255, 250, 244, 0.07);
+  padding-inline: 1rem;
+}
+
+.audience-list li:hover::after {
+  transform: scaleX(1);
+}
+
 .audience-list span {
   color: var(--color-accent);
   font-size: 0.72rem;
   font-weight: 700;
+  transition: color 0.45s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.audience-list li:hover span {
+  color: #fffaf4;
+  transform: translateY(-0.15rem);
 }
 
 .audience-list p {
@@ -707,6 +879,12 @@ a:hover .arrow {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 3vw, 1.7rem);
   line-height: 1.3;
+  transition: color 0.45s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.audience-list li:hover p {
+  color: #fffaf4;
+  transform: translateX(0.4rem);
 }
 
 /* Benefícios */
@@ -737,19 +915,58 @@ a:hover .arrow {
 }
 
 .benefit-card {
+  position: relative;
+  isolation: isolate;
   padding-block: 2rem;
   border-bottom: 1px solid var(--color-line);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Superfície que aparece no hover sem desalinhar o texto das bordas */
+.benefit-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: 1rem;
+  background: var(--color-surface);
+  box-shadow: 0 1.4rem 2.6rem rgba(74, 46, 48, 0.14);
+  content: "";
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .benefit-card > span {
+  display: inline-block;
   color: var(--color-accent);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  transition: color 0.45s ease, letter-spacing 0.55s ease;
+}
+
+.benefit-card:hover > span {
+  color: var(--color-primary);
+  letter-spacing: 0.3em;
 }
 
 .benefit-card h3 {
   margin: 3rem 0 1rem;
+  transition: color 0.45s ease;
+}
+
+.benefit-card:hover h3 {
+  color: var(--color-primary);
 }
 
 .benefit-card p {
@@ -851,11 +1068,11 @@ a:hover .arrow {
 
 .final-book {
   display: grid;
-  min-height: 24rem;
+  min-height: 28rem;
   align-content: center;
   justify-items: center;
   gap: 1.5rem;
-  padding: 2.25rem 1.25rem;
+  padding: 2.25rem 1rem;
   background: rgba(74, 46, 48, 0.3);
 }
 
@@ -1061,6 +1278,7 @@ a:hover .arrow {
   transition:
     opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 110ms);
   will-change: opacity, transform;
 }
 
@@ -1153,9 +1371,17 @@ a:hover .arrow {
     padding-left: 0;
   }
 
+  .benefit-card:first-child::before {
+    left: -1.75rem;
+  }
+
   .benefit-card:last-child {
     padding-right: 0;
     border-right: 0;
+  }
+
+  .benefit-card:last-child::before {
+    right: -1.75rem;
   }
 
 }
@@ -1163,7 +1389,7 @@ a:hover .arrow {
 @media (min-width: 1024px) {
   .hero-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: start;
     gap: clamp(3rem, 6vw, 6rem);
   }
@@ -1178,8 +1404,8 @@ a:hover .arrow {
     bottom: 2.5rem;
   }
 
-  .author-image-wrap img {
-    max-height: 48rem;
+  .author-collage {
+    height: 38rem;
   }
 
   .journey-grid {
@@ -1187,7 +1413,7 @@ a:hover .arrow {
   }
 
   .final-book {
-    min-height: 35rem;
+    min-height: 41rem;
   }
 }
 

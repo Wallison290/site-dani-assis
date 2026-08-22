@@ -14,7 +14,8 @@ styles.css
   Estilos, cores e responsividade para computador e celular.
 
 scroll-reveal.js
-  Animação de entrada das seções e o efeito de abrir o livro no toque (celular).
+  Animação de entrada das seções, o efeito de abrir o livro no toque (celular),
+  o rodízio de fotos da seção da autora e o movimento da foto com o mouse.
 
 COMO ABRIR
 
@@ -38,6 +39,14 @@ EFEITO DO LIVRO (HOVER)
 Os mockups do livro (topo do site e área de preço) trocam para a foto do livro
 aberto quando o mouse passa por cima. No celular, o mesmo efeito acontece ao
 tocar na imagem.
+
+GALERIA DA AUTORA
+
+A seção "A mulher por trás da obra" alterna quatro fotos entre os três quadros
+a cada 2 segundos. Para trocar ou acrescentar fotos, coloque o arquivo em
+assets/ e edite a lista "photos" no início do bloco da galeria em
+scroll-reveal.js. As três primeiras fotos da lista também precisam constar no
+index.html, que é o que aparece antes do JavaScript carregar.
 
 ARQUIVOS NÃO UTILIZADOS
 
