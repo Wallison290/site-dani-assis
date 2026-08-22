@@ -40,6 +40,18 @@ Os mockups do livro (topo do site e área de preço) trocam para a foto do livro
 aberto quando o mouse passa por cima. No celular, o mesmo efeito acontece ao
 tocar na imagem.
 
+VIDEO DE FUNDO
+
+A seção "O que fica depois da leitura" usa o arquivo
+assets/video-fundo-o-que-fica-depois-da-leitura.mp4 como fundo, coberto por um
+véu na cor da seção para o texto continuar legível. O vídeo só é baixado quando
+a seção se aproxima da tela e pausa quando sai dela; até lá aparece a imagem
+assets/video-fundo-poster.jpg (o primeiro quadro do vídeo). Quem usa o sistema
+com "reduzir animações" ligado vê apenas essa imagem.
+
+Ao trocar o vídeo, gere um novo poster com o primeiro quadro e mantenha os dois
+nomes de arquivo ou atualize as referências no index.html.
+
 GALERIA DA AUTORA
 
 A seção "A mulher por trás da obra" alterna quatro fotos entre os três quadros
@@ -50,5 +62,6 @@ index.html, que é o que aparece antes do JavaScript carregar.
 
 ARQUIVOS NÃO UTILIZADOS
 
-As imagens foto-flores.png e mockuo-livro-2.png não são mais usadas pelo site,
-mas foram mantidas na pasta assets caso sejam necessárias no futuro.
+As imagens foto-flores.png, mockuo-livro-2.png e foto-celular.png não são mais
+usadas pelo site, mas foram mantidas na pasta assets caso sejam necessárias no
+futuro.

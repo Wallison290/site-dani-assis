@@ -149,3 +149,41 @@
     });
   });
 })();
+
+/* Vídeo de fundo: baixa e toca só quando a seção chega perto da tela */
+(() => {
+  const videos = document.querySelectorAll("[data-bg-video]");
+  if (!videos.length) return;
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+
+        if (!entry.isIntersecting) {
+          if (!video.paused) video.pause();
+          return;
+        }
+
+        if (!video.src) {
+          video.src = video.dataset.bgVideo;
+          video.load();
+        }
+
+        const started = video.play();
+        if (started && typeof started.catch === "function") {
+          /* Se o navegador recusar o autoplay, o poster continua no lugar */
+          started.catch(() => {});
+        }
+      });
+    },
+    { rootMargin: "250px 0px" }
+  );
+
+  videos.forEach((video) => {
+    video.muted = true;
+    observer.observe(video);
+  });
+})();
