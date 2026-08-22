@@ -412,6 +412,8 @@ a:hover .arrow {
 
 .book-flip--hero {
   width: 100%;
+  /* Recolhe a área transparente sob o mockup para a legenda não ficar longe */
+  margin-bottom: -20%;
   filter: drop-shadow(0 2.4rem 3.4rem rgba(22, 8, 9, 0.48));
 }
 
@@ -1459,13 +1461,13 @@ a:hover .arrow {
   }
 
   /*
-   * O PNG do mockup tem 11,06% de área transparente no topo. Subindo a
-   * imagem por 11,06% da altura da caixa (= 13,83% da largura, pela
+   * O PNG do mockup tem 15,96% de área transparente no topo. Subindo a
+   * imagem por 15,96% da altura da caixa (= 19,95% da largura, pela
    * proporção 2160/2700), o topo visível do livro encosta na mesma linha
    * do início do bloco de texto.
    */
   .book-flip--hero {
-    margin-top: -13.83%;
+    margin-top: -19.95%;
   }
 
   h1 {

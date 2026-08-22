@@ -62,6 +62,6 @@ index.html, que é o que aparece antes do JavaScript carregar.
 
 ARQUIVOS NÃO UTILIZADOS
 
-As imagens foto-flores.png, mockuo-livro-2.png e foto-celular.png não são mais
+As imagens foto-flores.png, livro-dani.png e foto-celular.png não são mais
 usadas pelo site, mas foram mantidas na pasta assets caso sejam necessárias no
 futuro.
