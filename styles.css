@@ -387,18 +387,34 @@ h3 {
   transform: scale(0.94);
 }
 
-.book-flip:hover .book-flip__img--front,
-.book-flip:focus-visible .book-flip__img--front,
+/* Estado aberto controlado por classe: e o unico caminho no toque */
 .book-flip.is-open .book-flip__img--front {
   opacity: 0;
   transform: scale(0.94);
 }
 
-.book-flip:hover .book-flip__img--back,
-.book-flip:focus-visible .book-flip__img--back,
 .book-flip.is-open .book-flip__img--back {
   opacity: 1;
   transform: scale(1.02);
+}
+
+/*
+ * Hover e foco so valem onde existe ponteiro. No celular o :hover fica
+ * grudado depois do toque, entao o segundo toque removia .is-open mas o
+ * livro continuava aberto pelo :hover preso.
+ */
+@media (hover: hover) {
+  .book-flip:hover .book-flip__img--front,
+  .book-flip:focus-visible .book-flip__img--front {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  .book-flip:hover .book-flip__img--back,
+  .book-flip:focus-visible .book-flip__img--back {
+    opacity: 1;
+    transform: scale(1.02);
+  }
 }
 
 .book-flip--hero {

@@ -51,10 +51,13 @@
       }
     });
 
-    flip.addEventListener("mouseleave", () => {
-      flip.classList.remove("is-open");
-      flip.setAttribute("aria-pressed", "false");
-    });
+    /* Fechar ao tirar o mouse so faz sentido onde existe ponteiro */
+    if (!isTouch) {
+      flip.addEventListener("mouseleave", () => {
+        flip.classList.remove("is-open");
+        flip.setAttribute("aria-pressed", "false");
+      });
+    }
   });
 })();
 
