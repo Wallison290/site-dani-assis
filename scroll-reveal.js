@@ -19,3 +19,41 @@
 
   items.forEach((item) => observer.observe(item));
 })();
+
+/* Mockups do livro: hover no desktop, toque no mobile */
+(() => {
+  const flips = document.querySelectorAll(".book-flip");
+  if (!flips.length) return;
+
+  const isTouch = window.matchMedia("(hover: none)").matches;
+
+  if (isTouch) {
+    document.querySelectorAll(".book-flip__hint").forEach((hint) => {
+      const label = hint.lastChild;
+      if (label) label.textContent = " Toque para abrir o livro";
+    });
+  }
+
+  flips.forEach((flip) => {
+    const toggle = () => {
+      flip.classList.toggle("is-open");
+      flip.setAttribute("aria-pressed", flip.classList.contains("is-open"));
+    };
+
+    flip.setAttribute("aria-pressed", "false");
+
+    flip.addEventListener("click", toggle);
+
+    flip.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggle();
+      }
+    });
+
+    flip.addEventListener("mouseleave", () => {
+      flip.classList.remove("is-open");
+      flip.setAttribute("aria-pressed", "false");
+    });
+  });
+})();

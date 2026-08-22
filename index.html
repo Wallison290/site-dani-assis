@@ -33,13 +33,24 @@
             "name": "A Essência da Coragem",
             "author": { "@type": "Person", "name": "Dani Assis" },
             "inLanguage": "pt-BR",
-            "description": "Uma jornada de fé, empreendedorismo e transformação para quem deseja viver com propósito."
+            "description": "Uma jornada de fé, empreendedorismo e transformação para quem deseja viver com propósito.",
+            "offers": {
+              "@type": "Offer",
+              "price": "59.90",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/InStock",
+              "url": "https://go.hotmart.com/S106595446C?dp=1"
+            }
           },
           {
             "@type": "Person",
             "name": "Dani Assis",
             "jobTitle": "Autora, palestrante e apresentadora",
-            "sameAs": ["https://www.instagram.com/daniassis_oficial/"]
+            "sameAs": [
+              "https://www.instagram.com/daniassis_oficial/",
+              "https://www.instagram.com/aromas_daniassis/",
+              "https://www.instagram.com/podcastempreendedercomfe/"
+            ]
           }
         ]
       }
@@ -62,26 +73,54 @@
             <div class="hero-actions">
               <a
                 class="button button--light"
-                href="https://wa.me/5587999999999?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20quero%20receber%20meu%20exemplar."
+                href="https://go.hotmart.com/S106595446C?dp=1"
+                target="_blank"
+                rel="noopener"
+                data-event="click_compra_hero"
+              >
+                Quero receber meu exemplar
+              </a>
+              <a
+                class="text-link text-link--light"
+                href="https://wa.me/5511973615080?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
                 target="_blank"
                 rel="noopener"
                 data-event="click_whatsapp_hero"
               >
-                Quero receber meu exemplar
+                Falar no WhatsApp
+                <span class="arrow" aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
 
           <div class="hero-visual reveal">
-            <img
-              class="hero-book-mockup"
-              src="assets/livro-dani.png"
-              alt="Mockup do livro A Essência da Coragem, de Dani Assis"
-              width="2025"
-              height="2531"
-              loading="eager"
-              fetchpriority="high"
-            />
+            <div
+              class="book-flip book-flip--hero"
+              tabindex="0"
+              role="button"
+              aria-label="Ver o livro A Essência da Coragem aberto"
+            >
+              <img
+                class="book-flip__img book-flip__img--front"
+                src="assets/livro-dani.png"
+                alt="Mockup do livro A Essência da Coragem, de Dani Assis"
+                width="2025"
+                height="2531"
+                loading="eager"
+                fetchpriority="high"
+              />
+              <img
+                class="book-flip__img book-flip__img--back"
+                src="assets/livro-aberto.png"
+                alt="Livro A Essência da Coragem aberto, mostrando o Capítulo 1"
+                width="2160"
+                height="2700"
+                loading="lazy"
+              />
+            </div>
+            <p class="book-flip__hint">
+              <span aria-hidden="true">✦</span> Passe o mouse para abrir o livro
+            </p>
           </div>
         </div>
 
@@ -135,10 +174,10 @@
             </p>
             <a
               class="button"
-              href="https://wa.me/5587999999999?text=Conheci%20o%20livro%20A%20Ess%C3%AAncia%20da%20Coragem%20pelo%20site%20e%20quero%20adquirir%20meu%20exemplar."
+              href="https://go.hotmart.com/S106595446C?dp=1"
               target="_blank"
               rel="noopener"
-              data-event="click_whatsapp_livro"
+              data-event="click_compra_livro"
             >
               Adquirir meu exemplar
             </a>
@@ -283,10 +322,10 @@
           <div class="centered-action reveal">
             <a
               class="button"
-              href="https://wa.me/5587999999999?text=Vi%20os%20aprendizados%20do%20livro%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20quero%20come%C3%A7ar%20minha%20jornada."
+              href="https://go.hotmart.com/S106595446C?dp=1"
               target="_blank"
               rel="noopener"
-              data-event="click_whatsapp_transformacao"
+              data-event="click_compra_transformacao"
             >
               Começar minha jornada de coragem
             </a>
@@ -297,7 +336,7 @@
       <!-- Bastidores -->
       <section class="section purpose-section photo-section">
         <div class="container purpose-inner reveal">
-          <p class="eyebrow eyebrow--light">O propósito por trás da obra</p>
+          <p class="eyebrow">O propósito por trás da obra</p>
           <p class="display-quote">
             “Este livro precisou existir para lembrar que uma vida com propósito
             começa quando a fé encontra movimento.”
@@ -316,36 +355,63 @@
       <section id="exemplar" class="section final-cta-section photo-section">
         <div class="container final-cta-grid">
           <div class="final-book reveal">
-            <img
-              class="final-book-image"
-              src="assets/mockuo-livro-2.png"
-              alt="Mockup do livro A Essência da Coragem, de Dani Assis"
-              width="2160"
-              height="2700"
-              loading="lazy"
-            />
+            <div
+              class="book-flip book-flip--final"
+              tabindex="0"
+              role="button"
+              aria-label="Ver o livro A Essência da Coragem aberto"
+            >
+              <img
+                class="book-flip__img book-flip__img--front"
+                src="assets/livro-area-de-preco.png"
+                alt="Exemplares do livro A Essência da Coragem com o brinde exclusivo do perfume"
+                width="2160"
+                height="2700"
+                loading="lazy"
+              />
+              <img
+                class="book-flip__img book-flip__img--back"
+                src="assets/livro-aberto.png"
+                alt="Livro A Essência da Coragem aberto, mostrando o Capítulo 1"
+                width="2160"
+                height="2700"
+                loading="lazy"
+              />
+            </div>
+            <p class="book-flip__hint book-flip__hint--light">
+              <span aria-hidden="true">✦</span> Passe o mouse para abrir o livro
+            </p>
           </div>
 
           <div class="final-cta-copy reveal">
             <p class="eyebrow">Seu próximo capítulo pode começar agora</p>
-            <h2>Receba A Essência da Coragem.</h2>
+            <h2>Receba A&nbsp;Essência da Coragem.</h2>
             <p class="intro">
-              Fale pelo WhatsApp para saber como adquirir o seu exemplar e
-              começar esta leitura.
+              Garanta o seu exemplar agora e comece esta leitura com o brinde
+              exclusivo reservado aos 10 primeiros pedidos.
             </p>
+
+            <div class="price-card">
+              <p class="price-card__label">Preço</p>
+              <p class="price-card__value">R$ 59,90</p>
+              <p class="price-card__installment">
+                em <strong>8x de R$ 8,71</strong> * no cartão
+              </p>
+            </div>
+
             <div class="final-actions">
               <a
                 class="button button--light"
-                href="https://wa.me/5587999999999?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20quero%20receber%20meu%20exemplar."
+                href="https://go.hotmart.com/S106595446C?dp=1"
                 target="_blank"
                 rel="noopener"
-                data-event="click_whatsapp_final"
+                data-event="click_compra_final"
               >
                 Quero receber meu exemplar
               </a>
               <a
                 class="text-link text-link--light"
-                href="https://wa.me/5587999999999?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
+                href="https://wa.me/5511973615080?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
                 target="_blank"
                 rel="noopener"
                 data-event="click_whatsapp_duvida"
@@ -380,10 +446,59 @@
 
         <div class="footer-col footer-col--contact">
           <p class="footer-col__title">Contato</p>
+
+          <ul class="footer-handles">
+            <li>
+              <a
+                href="https://www.instagram.com/daniassis_oficial/"
+                target="_blank"
+                rel="noopener"
+                data-event="click_instagram_oficial"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4.2"></circle>
+                  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+                </svg>
+                <span>@daniassis_oficial</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/aromas_daniassis/"
+                target="_blank"
+                rel="noopener"
+                data-event="click_instagram_aromas"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4.2"></circle>
+                  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+                </svg>
+                <span>@aromas_daniassis</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/podcastempreendedercomfe/"
+                target="_blank"
+                rel="noopener"
+                data-event="click_instagram_podcast"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="2.8" width="6" height="11" rx="3"></rect>
+                  <path d="M5.5 11.2a6.5 6.5 0 0 0 13 0"></path>
+                  <path d="M12 17.7V21"></path>
+                </svg>
+                <span>@podcastempreendedercomfe</span>
+              </a>
+            </li>
+          </ul>
+
           <div class="footer-social">
             <a
               class="footer-social__link"
-              href="https://wa.me/5587999999999?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
+              href="https://wa.me/5511973615080?text=Vim%20pelo%20site%20da%20A%20Ess%C3%AAncia%20da%20Coragem%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20livro."
               target="_blank"
               rel="noopener"
               aria-label="Falar no WhatsApp"
@@ -391,19 +506,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 3a9 9 0 0 0-7.75 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"></path>
                 <path d="M8.5 8.7c.3-.7.6-.7.9-.7h.5c.2 0 .4 0 .6.5l.6 1.5c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .6.6 1 1.6 1.9 2.6 2.4.3.1.4.1.6-.1l.6-.6c.2-.2.4-.2.6-.1l1.4.7c.2.1.3.2.3.5 0 .8-.7 1.4-1.4 1.5-1.1.2-2.6-.1-4.5-1.8-1.6-1.4-2.6-3-2.8-4.1-.1-.6.1-1.1.4-1.6Z" fill="currentColor" stroke="none"></path>
-              </svg>
-            </a>
-            <a
-              class="footer-social__link"
-              href="https://www.instagram.com/daniassis_oficial/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram de Dani Assis"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
-                <circle cx="12" cy="12" r="4.2"></circle>
-                <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
               </svg>
             </a>
             <a

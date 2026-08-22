@@ -4,6 +4,8 @@ ESTRUTURA
 
 assets/
   Contém todas as imagens utilizadas no site.
+assets/fonts/
+  Fontes do site (Playfair Display para títulos, Montserrat para textos).
 
 index.html
   Arquivo principal do site.
@@ -11,10 +13,13 @@ index.html
 styles.css
   Estilos, cores e responsividade para computador e celular.
 
+scroll-reveal.js
+  Animação de entrada das seções e o efeito de abrir o livro no toque (celular).
+
 COMO ABRIR
 
 1. Extraia o arquivo ZIP.
-2. Mantenha a pasta assets junto do index.html e do styles.css.
+2. Mantenha a pasta assets junto do index.html, styles.css e scroll-reveal.js.
 3. Clique duas vezes no arquivo index.html para abrir o site no navegador.
 
 COMO PUBLICAR
@@ -22,11 +27,19 @@ COMO PUBLICAR
 Envie a pasta completa para a hospedagem, sem alterar a estrutura dos arquivos.
 O index.html deve permanecer na raiz.
 
-ATENÇÃO
+LINKS OFICIAIS EM USO
 
-O WhatsApp utilizado nos botões ainda é o número provisório 5587999999999.
-Antes de publicar, substitua esse número pelo WhatsApp definitivo da cliente em
-todos os links wa.me presentes no index.html.
+Pagamento (Hotmart): https://go.hotmart.com/S106595446C?dp=1
+WhatsApp de atendimento: https://wa.me/5511973615080
+Instagram: @daniassis_oficial, @aromas_daniassis e @podcastempreendedercomfe
 
-A imagem foto-flores enviada originalmente estava incompleta. Para impedir uma
-imagem quebrada, a versão atual usa a composição floral da capa como alternativa.
+EFEITO DO LIVRO (HOVER)
+
+Os mockups do livro (topo do site e área de preço) trocam para a foto do livro
+aberto quando o mouse passa por cima. No celular, o mesmo efeito acontece ao
+tocar na imagem.
+
+ARQUIVOS NÃO UTILIZADOS
+
+As imagens foto-flores.png e mockuo-livro-2.png não são mais usadas pelo site,
+mas foram mantidas na pasta assets caso sejam necessárias no futuro.
