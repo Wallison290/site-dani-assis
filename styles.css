@@ -1327,6 +1327,24 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Credito discreto do desenvolvedor */
+.footer-credit {
+  margin-top: 0.6rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-credit a {
+  color: rgba(255, 250, 244, 0.34);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--color-accent);
+}
+
 /* Movimento discreto */
 .reveal {
   opacity: 1;
