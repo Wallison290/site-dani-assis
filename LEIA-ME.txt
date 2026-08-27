@@ -31,6 +31,8 @@ O index.html deve permanecer na raiz.
 LINKS OFICIAIS EM USO
 
 Pagamento (Hotmart): https://go.hotmart.com/S106595446C?dp=1
+  Usado no botao do card "O livro". Os demais botoes do site (topo, secao do
+  livro e secao de aprendizados) rolam para a secao de ofertas (#exemplar).
 WhatsApp de atendimento: https://wa.me/5511973615080
 Instagram: @daniassis_oficial, @aromas_daniassis e @podcastempreendedercomfe
 
