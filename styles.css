@@ -424,13 +424,6 @@ h3 {
   filter: drop-shadow(0 2.4rem 3.4rem rgba(22, 8, 9, 0.48));
 }
 
-.book-flip--final {
-  width: min(100%, 42rem);
-  /* Compensa a margem transparente do PNG, aproximando a legenda */
-  margin-bottom: -7%;
-  filter: drop-shadow(0 2.2rem 3.2rem rgba(41, 17, 19, 0.5));
-}
-
 .book-flip__hint {
   display: inline-flex;
   align-items: center;
@@ -1114,71 +1107,34 @@ h3 {
   background-position: center;
 }
 
-.final-cta-grid {
-  display: grid;
-  gap: 3.5rem;
-  align-items: center;
+.final-cta-intro {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
-.final-book {
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  gap: 1.25rem;
+.final-cta-intro .eyebrow {
+  justify-content: center;
 }
 
-/* Preço */
-.price-card {
-  display: inline-grid;
-  margin-bottom: 2rem;
-  padding: 1.25rem 1.75rem;
-  border: 1px solid rgba(234, 219, 200, 0.34);
-  border-radius: 0.75rem;
-  background: rgba(41, 17, 19, 0.26);
-  backdrop-filter: blur(2px);
+.final-cta-intro h2 {
+  max-width: 16ch;
+  margin-inline: auto;
 }
 
-.price-card p {
-  margin: 0;
-}
-
-.price-card .price-card__label {
-  color: rgba(234, 219, 200, 0.72);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.price-card .price-card__value {
-  margin-top: 0.35rem;
-  color: #fffaf4;
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 3.1rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.price-card .price-card__installment {
-  margin-top: 0.5rem;
-  color: rgba(255, 250, 244, 0.76);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.price-card__installment strong {
-  color: var(--color-accent);
-  font-weight: 700;
+.final-cta-intro .intro {
+  max-width: 34rem;
+  margin-bottom: 0;
+  margin-inline: auto;
 }
 
 /* Destaque de lançamento */
 .launch-note {
   display: flex;
-  max-width: 26rem;
+  max-width: 29rem;
   align-items: baseline;
   gap: 0.6rem;
-  margin: -1rem 0 2rem;
+  margin: 1.75rem auto 0;
   padding: 0.85rem 1.1rem;
   border-left: 2px solid var(--color-accent);
   border-radius: 0 0.5rem 0.5rem 0;
@@ -1186,6 +1142,7 @@ h3 {
   color: rgba(255, 250, 244, 0.88);
   font-size: 0.86rem;
   line-height: 1.5;
+  text-align: left;
 }
 
 .launch-note__mark {
@@ -1198,23 +1155,153 @@ h3 {
   font-weight: 700;
 }
 
-.final-cta-copy h2 {
-  max-width: 12ch;
+/* Ofertas: livro, fragrância e combo */
+.offer-grid {
+  display: grid;
+  /* minmax(0, 1fr): sem isso a largura intrinseca dos mockups estoura a coluna */
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 27rem;
+  gap: 1.75rem;
+  margin: 3.5rem auto 0;
+  padding: 0;
+  list-style: none;
 }
 
-.final-cta-copy .eyebrow {
-  color: var(--color-bg);
-}
-
-.final-cta-copy .intro {
-  color: rgba(255, 250, 244, 0.76);
-}
-
-.final-actions {
+.offer-card {
+  position: relative;
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
+  padding: 1.9rem 1.5rem 2rem;
+  border: 1px solid rgba(234, 219, 200, 0.3);
+  border-radius: 1rem;
+  background: rgba(41, 17, 19, 0.3);
+  backdrop-filter: blur(3px);
+  text-align: center;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.offer-card--featured {
+  border-color: rgba(212, 140, 117, 0.62);
+  background: rgba(41, 17, 19, 0.44);
+  box-shadow: 0 1.2rem 2.4rem rgba(24, 10, 11, 0.28);
+}
+
+@media (hover: hover) {
+  .offer-card:hover {
+    border-color: rgba(234, 219, 200, 0.52);
+    box-shadow: 0 1.4rem 2.6rem rgba(24, 10, 11, 0.34);
+    transform: translateY(-4px);
+  }
+
+  .offer-card--featured:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+/* Selo do combo: fora do fluxo, para os tres cards ficarem alinhados */
+.offer-card__badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  color: #2e1416;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/*
+ * Os PNGs foram recortados na borda do produto, entao a altura da caixa e o
+ * que define a escala. Alinhados embaixo, os tres ficam na mesma "prateleira".
+ */
+.offer-card__media {
+  display: flex;
+  min-width: 0;
+  height: clamp(11rem, 22vw, 13.5rem);
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.offer-card__img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1.1rem 1.8rem rgba(24, 10, 11, 0.45));
+}
+
+/* O frasco e menor que a pilha de livros: mantem a escala verossimil */
+.offer-card__img--fragrancia {
+  height: 86%;
+}
+
+.offer-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer-card__name {
+  margin: 0;
+  color: #fffaf4;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.offer-card__desc {
+  max-width: 26ch;
+  margin: 0.6rem 0 0;
+  color: rgba(255, 250, 244, 0.74);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Altura minima fixa: o preco riscado do combo nao desalinha os outros cards */
+.offer-card__pricing {
+  display: grid;
+  min-height: 4.2rem;
+  align-content: end;
+  gap: 0.4rem;
+  margin: 1.1rem 0 1.4rem;
+}
+
+.offer-card__price-old {
+  margin: 0;
+  color: rgba(255, 250, 244, 0.62);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.offer-card__price {
+  margin: 0;
+  color: #fffaf4;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* margin-top auto: os botoes encostam no rodape do card, sempre alinhados */
+.offer-card__cta {
+  width: 100%;
+  margin-top: auto;
+  padding-inline: 1.25rem;
 }
 
 /* Rodapé */
@@ -1395,8 +1482,7 @@ h3 {
     width: min(100% - 4rem, var(--container));
   }
 
-  .hero-actions,
-  .final-actions {
+  .hero-actions {
     flex-direction: row;
     align-items: center;
   }
@@ -1408,6 +1494,21 @@ h3 {
 
   .button {
     padding-inline: 1.75rem;
+  }
+
+  /* Duas colunas: o combo atravessa a linha inteira ate caber a terceira */
+  .offer-grid {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .offer-card--featured {
+    grid-column: 1 / -1;
+  }
+
+  .offer-card--featured .offer-card__content {
+    max-width: 26rem;
+    margin-inline: auto;
   }
 
   .book-stage {
@@ -1422,8 +1523,7 @@ h3 {
 
   .book-grid,
   .author-grid,
-  .journey-grid,
-  .final-cta-grid {
+  .journey-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
   }
@@ -1433,15 +1533,8 @@ h3 {
   }
 
   .book-grid,
-  .author-grid,
-  .final-cta-grid {
+  .author-grid {
     gap: clamp(4rem, 8vw, 7rem);
-  }
-
-  /* Mockup final maior: a coluna da imagem ocupa mais espaço que a do texto */
-  .final-cta-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(2.5rem, 4vw, 4rem);
   }
 
   .book-grid .section-copy {
@@ -1488,6 +1581,19 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+  /* Tres ofertas lado a lado: o combo volta a ocupar uma coluna so */
+  .offer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .offer-card--featured {
+    grid-column: auto;
+  }
+
+  .offer-card--featured .offer-card__content {
+    max-width: none;
+  }
+
   .hero-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

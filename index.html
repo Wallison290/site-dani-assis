@@ -40,7 +40,7 @@
             "description": "Uma jornada de fé, empreendedorismo e transformação para quem deseja viver com propósito.",
             "offers": {
               "@type": "Offer",
-              "price": "59.90",
+              "price": "69.90",
               "priceCurrency": "BRL",
               "availability": "https://schema.org/InStock",
               "url": "https://go.hotmart.com/S106595446C?dp=1"
@@ -368,51 +368,16 @@
 
       <!-- CTA final -->
       <section id="exemplar" class="section final-cta-section photo-section">
-        <div class="container final-cta-grid">
-          <div class="final-book reveal">
-            <div
-              class="book-flip book-flip--final"
-              tabindex="0"
-              role="button"
-              aria-label="Ver o livro A Essência da Coragem aberto"
-            >
-              <img
-                class="book-flip__img book-flip__img--front"
-                src="assets/livro-area-de-preco.png"
-                alt="Exemplares do livro A Essência da Coragem com o brinde exclusivo do perfume"
-                width="2160"
-                height="2700"
-                loading="lazy"
-              />
-              <img
-                class="book-flip__img book-flip__img--back"
-                src="assets/livro-aberto.png"
-                alt="Livro A Essência da Coragem aberto, mostrando o Capítulo 1"
-                width="2160"
-                height="2700"
-                loading="lazy"
-              />
-            </div>
-            <p class="book-flip__hint book-flip__hint--light">
-              <span aria-hidden="true">✦</span> Passe o mouse para abrir o livro
+        <div class="container">
+          <div class="final-cta-intro reveal">
+            <p class="eyebrow eyebrow--light">
+              Seu próximo capítulo pode começar agora
             </p>
-          </div>
-
-          <div class="final-cta-copy reveal">
-            <p class="eyebrow">Seu próximo capítulo pode começar agora</p>
             <h2>Receba A&nbsp;Essência da Coragem.</h2>
-            <p class="intro">
-              Garanta o seu exemplar agora e comece esta leitura com o brinde
-              exclusivo reservado aos 10 primeiros pedidos.
+            <p class="intro intro--light">
+              Escolha como quer começar esta jornada: o livro, a fragrância que
+              nasceu dele ou os dois juntos, com desconto.
             </p>
-
-            <div class="price-card">
-              <p class="price-card__label">Preço</p>
-              <p class="price-card__value">R$ 59,90</p>
-              <p class="price-card__installment">
-                em <strong>8x de R$ 8,71</strong> * no cartão
-              </p>
-            </div>
 
             <p class="launch-note">
               <span class="launch-note__mark" aria-hidden="true">✦</span>
@@ -422,19 +387,119 @@
                 Paulo.
               </span>
             </p>
-
-            <div class="final-actions">
-              <a
-                class="button button--light"
-                href="https://go.hotmart.com/S106595446C?dp=1"
-                target="_blank"
-                rel="noopener"
-                data-event="click_compra_final"
-              >
-                Quero receber meu exemplar
-              </a>
-            </div>
           </div>
+
+          <ul class="offer-grid reveal">
+            <li class="offer-card">
+              <div class="offer-card__media">
+                <img
+                  class="offer-card__img"
+                  src="assets/mockup-livro.webp"
+                  alt="Exemplares do livro A Essência da Coragem, de Dani Assis, empilhados"
+                  width="727"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="offer-card__content">
+                <h3 class="offer-card__name">O livro</h3>
+                <p class="offer-card__desc">
+                  A Essência da Coragem em edição impressa.
+                </p>
+                <div class="offer-card__pricing">
+                  <p class="offer-card__price">R$&nbsp;69,90</p>
+                </div>
+                <a
+                  class="button button--light offer-card__cta"
+                  href="https://go.hotmart.com/S106595446C?dp=1"
+                  target="_blank"
+                  rel="noopener"
+                  data-event="click_compra_livro"
+                >
+                  Quero o livro
+                </a>
+              </div>
+            </li>
+
+            <li class="offer-card">
+              <div class="offer-card__media">
+                <img
+                  class="offer-card__img offer-card__img--fragrancia"
+                  src="assets/mockup-fragrancia.webp"
+                  alt="Fragrância A Essência da Coragem no cartão-presente com laço laranja"
+                  width="677"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="offer-card__content">
+                <h3 class="offer-card__name">A fragrância</h3>
+                <p class="offer-card__desc">
+                  A fragrância exclusiva que nasceu do livro.
+                </p>
+                <div class="offer-card__pricing">
+                  <p class="offer-card__price">R$&nbsp;29,90</p>
+                </div>
+                <!--
+                  LINK PENDENTE — FRAGRÂNCIA
+                  Troque o href="#exemplar" abaixo pelo link de checkout da
+                  fragrância. Enquanto estiver assim, o botão não leva a lugar
+                  nenhum.
+                -->
+                <a
+                  class="button button--light offer-card__cta"
+                  href="#exemplar"
+                  data-link-pendente="fragrancia"
+                  data-event="click_compra_fragrancia"
+                >
+                  Quero a fragrância
+                </a>
+              </div>
+            </li>
+
+            <li class="offer-card offer-card--featured">
+              <p class="offer-card__badge">Economize R$&nbsp;19,90</p>
+              <div class="offer-card__media">
+                <img
+                  class="offer-card__img"
+                  src="assets/mockup-livro-fragrancia.webp"
+                  alt="Livro A Essência da Coragem ao lado da fragrância exclusiva"
+                  width="1200"
+                  height="1046"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="offer-card__content">
+                <h3 class="offer-card__name">Livro + fragrância</h3>
+                <p class="offer-card__desc">
+                  A leitura e o aroma da jornada, no mesmo pedido.
+                </p>
+                <div class="offer-card__pricing">
+                  <p class="offer-card__price-old">
+                    De <s>R$&nbsp;99,80</s> por
+                  </p>
+                  <p class="offer-card__price">R$&nbsp;79,90</p>
+                </div>
+                <!--
+                  LINK PENDENTE — COMBO
+                  Troque o href="#exemplar" abaixo pelo link de checkout do
+                  combo. Enquanto estiver assim, o botão não leva a lugar
+                  nenhum.
+                -->
+                <a
+                  class="button button--light offer-card__cta"
+                  href="#exemplar"
+                  data-link-pendente="combo"
+                  data-event="click_compra_combo"
+                >
+                  Quero os dois
+                </a>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
