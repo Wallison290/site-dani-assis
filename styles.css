@@ -1240,11 +1240,6 @@ h3 {
   filter: drop-shadow(0 1.1rem 1.8rem rgba(24, 10, 11, 0.45));
 }
 
-/* O frasco e menor que a pilha de livros: mantem a escala verossimil */
-.offer-card__img--fragrancia {
-  height: 86%;
-}
-
 .offer-card__content {
   display: flex;
   flex: 1;
@@ -1496,19 +1491,10 @@ h3 {
     padding-inline: 1.75rem;
   }
 
-  /* Duas colunas: o combo atravessa a linha inteira ate caber a terceira */
+  /* Duas ofertas lado a lado: livro e combo */
   .offer-grid {
-    max-width: none;
+    max-width: 56rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .offer-card--featured {
-    grid-column: 1 / -1;
-  }
-
-  .offer-card--featured .offer-card__content {
-    max-width: 26rem;
-    margin-inline: auto;
   }
 
   .book-stage {
@@ -1581,19 +1567,6 @@ h3 {
 }
 
 @media (min-width: 1024px) {
-  /* Tres ofertas lado a lado: o combo volta a ocupar uma coluna so */
-  .offer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .offer-card--featured {
-    grid-column: auto;
-  }
-
-  .offer-card--featured .offer-card__content {
-    max-width: none;
-  }
-
   .hero-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

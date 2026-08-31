@@ -30,9 +30,14 @@ O index.html deve permanecer na raiz.
 
 LINKS OFICIAIS EM USO
 
-Pagamento (Hotmart): https://go.hotmart.com/S106595446C?dp=1
-  Usado no botao do card "O livro". Os demais botoes do site (topo, secao do
-  livro e secao de aprendizados) rolam para a secao de ofertas (#exemplar).
+Pagamento do livro (Hotmart):
+  https://hotmart.com/pt-br/marketplace/produtos/livro-a-essencia-da-coragem-l-dani-assis/M107354175V
+  Usado no botao do card "O livro".
+Pagamento do combo livro + fragrancia (Hotmart):
+  https://hotmart.com/pt-br/marketplace/produtos/livro-a-essencia-da-coragem-fragrancia-exclusiva/S106595446C
+  Usado no botao do card "Livro + fragrancia".
+  Os demais botoes do site (topo, secao do livro e secao de aprendizados) rolam
+  para a secao de ofertas (#exemplar).
 WhatsApp de atendimento: https://wa.me/5511973615080
 Instagram: @daniassis_oficial, @aromas_daniassis e @podcastempreendedercomfe
 
@@ -43,19 +48,14 @@ mouse passa por cima. No celular, o mesmo efeito acontece ao tocar na imagem.
 
 OFERTAS (SEÇÃO "SEU PRÓXIMO CAPÍTULO PODE COMEÇAR AGORA")
 
-A seção final mostra três cards: o livro (R$ 69,90), a fragrância (R$ 29,90) e
-o combo livro + fragrância (de R$ 99,80 por R$ 79,90). Os mockups são
-assets/mockup-livro.webp, assets/mockup-fragrancia.webp e
+A seção final mostra dois cards: o livro (R$ 69,90) e o combo livro +
+fragrância (de R$ 99,80 por R$ 79,90). A venda da fragrância avulsa foi
+removida do site. Os mockups são assets/mockup-livro.webp e
 assets/mockup-livro-fragrancia.webp, já recortados na borda do produto: quem
 define o tamanho na tela é a altura da caixa .offer-card__media, no styles.css.
 
-LINKS DE COMPRA PENDENTES
-
-Os botões da fragrância e do combo ainda não têm checkout. No index.html eles
-estão com href="#exemplar" e marcados com data-link-pendente e um comentário
-"LINK PENDENTE". Procure por LINK PENDENTE no index.html e troque os dois href
-pelos links definitivos. Enquanto isso, esses dois botões não levam a lugar
-nenhum.
+Os dois botões já apontam para os checkouts da Hotmart (ver LINKS OFICIAIS EM
+USO) e abrem em uma nova aba.
 
 VIDEO DE FUNDO
 
@@ -79,6 +79,6 @@ index.html, que é o que aparece antes do JavaScript carregar.
 
 ARQUIVOS NÃO UTILIZADOS
 
-As imagens foto-flores.png, livro-dani.png, foto-celular.png e
-livro-area-de-preco.png não são mais usadas pelo site, mas foram mantidas na
-pasta assets caso sejam necessárias no futuro.
+As imagens foto-flores.png, livro-dani.png, foto-celular.png,
+livro-area-de-preco.png e mockup-fragrancia.webp não são mais usadas pelo
+site, mas foram mantidas na pasta assets caso sejam necessárias no futuro.
